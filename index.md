@@ -1,4 +1,4 @@
-@def title = "Franklin Sandbox"
+@def title = "BinaryBuilder"
 @def hasmath = true
 @def hascode = true
 
