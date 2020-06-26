@@ -7,10 +7,10 @@
 
 <div class="pure-g watdis">
   <div class="pure-g images">
-    <div class="pure-u-1-4 pure-u-sm-1-2 img-small"><img src="/assets/path406.png"/></div>
-    <div class="pure-u-1-4 pure-u-sm-1-2 img-small"><img src="/assets/path116.png"/></div>
-    <div class="pure-u-1-4 pure-u-sm-1-2 img-small"><img src="/assets/path168.png"/></div>
-    <div class="pure-u-1-4 pure-u-sm-1-2 img-small"><img src="/assets/path300.png"/></div>
+    <div class="pure-u-1-4 pure-u-sm-1-2 img-small"><img src="/assets/toolchain.svg"/></div>
+    <div class="pure-u-1-4 pure-u-sm-1-2 img-small"><img src="/assets/sandbox.svg"/></div>
+    <div class="pure-u-1-4 pure-u-sm-1-2 img-small"><img src="/assets/audit.svg"/></div>
+    <div class="pure-u-1-4 pure-u-sm-1-2 img-small"><img src="/assets/wizard.svg"/></div>
   </div>
   <div class="pure-g features">
     <div class="pure-u-1-4">

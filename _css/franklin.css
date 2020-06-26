@@ -137,8 +137,9 @@ p {
 
 .franklin-content .img-small img {
     width: 30%;
-    text-align: left;
-    padding-bottom: 30px }
+    vertical-align: top;
+    padding-bottom: 60px;
+    padding-left: 0;  }
 
 /* ==================================================================
     KATEX
