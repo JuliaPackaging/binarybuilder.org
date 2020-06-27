@@ -3,29 +3,16 @@
 ================================================================== */
 
 html {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size  : 17px;
-    color: #1c1c1c;
+    font-family: 'Quattrocento', Serif;
+    font-size: 16px;
 }
 
-/* ==================================================================
-    BASIC GRID FOR PROFILE PIC
-================================================================== */
+p {
+    font-family: 'Quattrocento', Serif;
+    font-size: 16px;
+}
 
-.franklin-content .row {
-  display: block; }
 
-.franklin-content .left {
-  float: left;
-  margin-right: 15px; }
-
-.franklin-content .right {
-    float: right; }
-
-.franklin-content .container img {
-    width: auto;
-    padding-left: 0;
-    border-radius: 10px; }
 
 /* ==================================================================
     FOOT / COPYRIGHT
@@ -38,7 +25,7 @@ html {
 
 .page-foot {
     font-size: 80%;
-    font-family: Arial, serif;
+    font-family: Quattrocento, Serif;
     color: #a6a2a0;
     text-align: center;
     margin-top: 6em;
@@ -67,24 +54,20 @@ html {
     TITLES
 ================================================================== */
 
-.franklin-content h1 { font-size: 24px; }
-.franklin-content h2 { font-size: 22px; }
-.franklin-content h3 { font-size: 20px; }
+.franklin-content h1 { font-family: 'Oswald', sans-serif; font-size: 24px; }
+.franklin-content h2 { font-family: 'Oswald', sans-serif; font-size: 22px; }
+.franklin-content h3 { font-family: 'Oswald', sans-serif; font-size: 20px; }
 
 .franklin-content h1, h2, h3, h4, h5, h6 {
     text-align: left; }
 
-.franklin-content h1 {
-    padding-bottom: 0.5em;
-    border-bottom: 3px double lightgrey;
-    margin-top: 1.5em;
-    margin-bottom: 1em; }
-
-.franklin-content h2 {
+.franklin-content h4 {
+    font-family: Quattrocento;
+    font-weight: bold;
+    font-size: 18px;
     padding-bottom: 0.3em;
-    border-bottom: 1px solid lightgrey;
-    margin-top: 2em;
-    margin-bottom: 1em; }
+    margin-top: 0;
+    margin-bottom: 0; }
 
 .franklin-content h1 a { color: inherit; }
 .franklin-content h1 a:hover {text-decoration: none;}
@@ -153,9 +136,10 @@ html {
     padding-left: 10%; }
 
 .franklin-content .img-small img {
-    width: 50%;
-    text-align: center;
-    padding-left: 20%; }
+    width: 30%;
+    vertical-align: top;
+    padding-bottom: 60px;
+    padding-left: 0;  }
 
 /* ==================================================================
     KATEX
@@ -218,3 +202,55 @@ return{c:[{cN:"metaj",b:/^julia>/,r:10,starts:{e:/^(?![ ]{6})/,sL:"julia"},alias
     margin-bottom: 5px;
     border-radius: 0 10px 10px 0;
     border-left: 5px solid #4C9CF1; }
+
+/* Customisations */
+
+.titlebar {
+    color: rgba(255, 255, 255, 0.85);
+    background-color: #A51C30;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+    height:85px;
+    font-family: 'Oswald', sans-serif; font-size: 24px;
+}
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.85);
+    padding-top: 0.4em;
+    padding-bottom: 1em;
+    background-color: #d8d8d8;
+};
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.watdis {
+    padding-top: 1.5em;
+    padding-bottom: 0.75em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.element {
+    max-width: 30%
+}
+.highlight-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.button-red {
+    background: #A51C30;
+    color: white;
+    border-radius: 0.3em;
+}
