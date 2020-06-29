@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css" />
   <link href="https://fonts.googleapis.com/css?family=Oswald|Quattrocento" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
 
@@ -20,14 +21,22 @@
   <header class="titlebar">
       <h1>BinaryBuilder</h1>
   </header>
-  <div class="intro">
-      <p>Build native binaries for 13 platforms in minutes. See how.</p>
-  <asciinema-player src="/assets/304105.cast" cols="100" rows="27
-  poster="npt:0:1" start-at=1 preload=1 speed=1.5></asciinema-player>
+  <div class="intro pure-g center">
+    <div class="pure-u-1-1">
+      <p style="text-align: center;">Build native binaries for 13 platforms in minutes. See how.</p>
+    </div>
+    <div class="pure-u-1-1">
+      <asciinema-player src="/assets/304105.cast" cols="100" rows="27
+      poster="npt:0:1" start-at=1 preload=1 speed=1.5></asciinema-player>
+  </div> 
 
-  <div style="display: flex; justify-content: space-between; width:40%; padding-top: 1em; padding-bottom: 0.3em;">
-    <a class="pure-button button-red" href="https://github.com/JuliaPackaging/BinaryBuilder.jl">Source</a>
-    <a class="pure-button button-red" href="https://juliapackaging.github.io/BinaryBuilder.jl/dev/">Documentation</a>
+  <div class="pure-g">
+    <div class="pure-u-1-2 buttons">
+      <a class="pure-button button-red" href="https://github.com/JuliaPackaging/BinaryBuilder.jl">Source</a>
+    </div>
+    <div class="pure-u-1-2 buttons">
+      <a class="pure-button button-red" href="https://juliapackaging.github.io/BinaryBuilder.jl/dev/">Documentation</a>
+    </div>
    </div>
   </div>
 
