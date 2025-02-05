@@ -9,7 +9,7 @@
   <div class="pure-u-1-2 pure-u-md-1-4 img-small">
     <img class="pure-img" src="/assets/toolchain.svg"/>
     <h3>Toolchains</h3>
-    <p>49 well maintained toolchains for major platforms</p>
+    <p>45 well maintained toolchains for major platforms</p>
   </div>
   <div class="pure-u-1-2 pure-u-md-1-4 img-small">
     <img class="pure-img" src="/assets/sandbox.svg"/>
