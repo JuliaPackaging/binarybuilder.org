@@ -9,7 +9,7 @@
   <div class="pure-u-1-2 pure-u-md-1-4 img-small">
     <img class="pure-img" src="/assets/toolchain.svg"/>
     <h3>Toolchains</h3>
-    <p>45 well maintained toolchains for major platforms</p>
+    <p>49 well maintained toolchains for major platforms</p>
   </div>
   <div class="pure-u-1-2 pure-u-md-1-4 img-small">
     <img class="pure-img" src="/assets/sandbox.svg"/>
@@ -37,7 +37,7 @@
     </div>
     <div class="pure-u-1-2 pure-u-md-1-3">
         <h3>CPU support</h3>
-        <p>BinaryBuilder supports x86, ARM, AArch64, PowerPC. Automatically!</p>
+        <p>BinaryBuilder supports x86_64, x86, ARMv7, AArch64, PPCLE64, and Riscv64. Automatically!</p>
     </div>
     <div class="pure-u-1-2 pure-u-md-1-3">
         <h3>Language support</h3>
