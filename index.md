@@ -37,7 +37,7 @@
     </div>
     <div class="pure-u-1-2 pure-u-md-1-3">
         <h3>CPU support</h3>
-        <p>BinaryBuilder supports x86_64, x86, ARMv7, AArch64, PPCLE64, and Riscv64. Automatically!</p>
+        <p>BinaryBuilder supports x86_64, x86, ARMv7, AArch64, PPC64LE, and Riscv64. Automatically!</p>
     </div>
     <div class="pure-u-1-2 pure-u-md-1-3">
         <h3>Language support</h3>
