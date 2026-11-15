@@ -3,10 +3,20 @@ on:
   push:
     branches:
       - master
+  pull_request:
+  # The toolchain, GPU and MPI pages are generated from BinaryBuilderBase, Yggdrasil
+  # and the General registry, so rebuild weekly to pick up their changes.
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
 permissions:
-  contents: write
+  contents: read
+
 jobs:
-  build-and-deploy:
+  # Builds the site with read-only permissions, since it runs code downloaded from
+  # Yggdrasil (see utils.jl).  Pull requests stop here.
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -17,14 +27,36 @@ jobs:
       uses: julia-actions/setup-julia@v3
       with:
         version: '1'
-    - run: julia -e '
-            using Pkg; Pkg.add(["NodeJS", "Franklin"]);
+    - name: Build site
+      run: julia --project=. -e '
+            using Pkg; Pkg.instantiate();
             using NodeJS; run(`$(npm_cmd()) install highlight.js`);
             using Franklin;
-            Pkg.activate("."); Pkg.instantiate();
             optimize(minify=false)'
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v4
+    - name: Upload site
+      uses: actions/upload-artifact@v7
+      with:
+        name: site
+        path: __site
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v7
+      with:
+        persist-credentials: false
+    - name: Download site
+      uses: actions/download-artifact@v8
+      with:
+        name: site
+        path: __site
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         branch: gh-pages
