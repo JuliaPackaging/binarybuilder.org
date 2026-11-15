@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css" />
   <link href="https://fonts.googleapis.com/css?family=Oswald|Quattrocento" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
+  {{ispage index.html}}<link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />{{end}}
 
   {{if hasmath}} {{insert head_katex.html }}     {{end}}
   {{if hascode}} {{insert head_highlight.html }}   {{end}}
@@ -19,14 +19,15 @@
 <body>
 
   <header class="titlebar">
-      <h1>BinaryBuilder</h1>
+      <h1><a href="/">BinaryBuilder</a></h1>
   </header>
+  {{ispage index.html}}
   <div class="intro pure-g center">
     <div class="pure-u-1-1">
-      <p style="text-align: center;">Build native binaries for 18 platforms in minutes. See how.</p>
+      <p style="text-align: center;">Build native binaries for <a href="/toolchains/">{{platform_count}} platforms</a> in minutes. See how.</p>
     </div>
     <div class="pure-u-1-1">
-      <asciinema-player src="/assets/304105.cast" cols="100" rows="27
+      <asciinema-player src="/assets/304105.cast" cols="100" rows="27"
       poster="npt:0:1" start-at=1 preload=1 speed=1.5></asciinema-player>
   </div>
 
@@ -39,5 +40,6 @@
     </div>
    </div>
   </div>
+  {{end}}
 
 <!-- Content appended here -->

@@ -1,2 +1,6 @@
 .DS_Store
 __site
+Manifest.toml
+node_modules/
+package.json
+package-lock.json
