@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Oswald|Quattrocento" rel="stylesheet">
+  
+
+  
+  
+  <link rel="stylesheet" href="/css/franklin.css">
+   <title>Yggdrasil MPI</title>  
+  <style>
+
+  </style>
+</head>
+<body>
+
+  <header class="titlebar">
+      <h1><a href="/">BinaryBuilder</a></h1>
+  </header>
+  
+
+<!-- Content appended here -->
+<div class="franklin-content"><h1 id="mpi"><a href="#mpi" class="header-anchor">MPI</a></h1>
+<p><a href="https://github.com/JuliaPackaging/Yggdrasil/">Yggdrasil</a>, the community build tree for BinaryBuilder recipes, builds packages that use MPI once for each of the 5 MPI implementations below, and tags each build with its implementation. Users choose an implementation with <a href="https://juliaparallel.org/MPI.jl/stable/configuration/">MPIPreferences.jl</a>; without a preference, Julia uses MPICH, or Microsoft MPI on Windows. Julia then installs the matching build of every package, so switching implementations doesn&#39;t require rebuilding anything.</p>
+<p>Use MPI from Julia with <a href="https://github.com/JuliaParallel/MPI.jl">MPI.jl</a>, and start a recipe from the <a href="https://github.com/JuliaPackaging/Yggdrasil/tree/master/H/HelloWorldMPI"><code>HelloWorldMPI</code></a> example.</p>
+<h2 id="implementations"><a href="#implementations" class="header-anchor">Implementations</a></h2>
+
+<div class="table-scroll"><table class="toolchains">
+<thead><tr><th>Implementation</th><th>Package</th><th>Compatible versions</th><th>Latest version</th><th>Platforms</th></tr></thead>
+<tbody>
+<tr><td>MPIABI</td><td><a href="https://github.com/JuliaBinaryWrappers/MPIABI_jll.jl"><code>MPIABI_jll</code></a></td><td>1.x (&ge; 1.0.0)</td><td>1.0.1</td><td>16 of 18</td></tr>
+<tr><td>MPICH</td><td><a href="https://github.com/JuliaBinaryWrappers/MPICH_jll.jl"><code>MPICH_jll</code></a></td><td>5.x (&ge; 5.0.3)</td><td>5.0.3</td><td>16 of 18</td></tr>
+<tr><td>MPItrampoline</td><td><a href="https://github.com/JuliaBinaryWrappers/MPItrampoline_jll.jl"><code>MPItrampoline_jll</code></a></td><td>5.x (&ge; 5.5.7)</td><td>5.5.7</td><td>11 of 18</td></tr>
+<tr><td>MicrosoftMPI</td><td><a href="https://github.com/JuliaBinaryWrappers/MicrosoftMPI_jll.jl"><code>MicrosoftMPI_jll</code></a></td><td>10.x (&ge; 10.1.5)</td><td>10.1.5</td><td>2 of 18</td></tr>
+<tr><td>OpenMPI</td><td><a href="https://github.com/JuliaBinaryWrappers/OpenMPI_jll.jl"><code>OpenMPI_jll</code></a></td><td>4.x (&ge; 4.1.11), 5.x (&ge; 5.0.14)</td><td>5.0.14</td><td>15 of 18</td></tr>
+</tbody></table></div>
+
+
+<p>Compatible versions are the versions of each implementation that the builds work with. <a href="https://github.com/JuliaBinaryWrappers/MPICH_CUDA_jll.jl"><code>MPICH_CUDA_jll</code></a>, a build of MPICH with CUDA support, can be selected in place of MPICH. Latest versions are the latest ones in Julia&#39;s General registry when the site was built.</p>
+<h2 id="platforms"><a href="#platforms" class="header-anchor">Platforms</a></h2>
+
+<div class="table-scroll"><table class="toolchains">
+<thead><tr><th>Platform</th><th>MPIABI</th><th>MPICH</th><th>MPItrampoline</th><th>MicrosoftMPI</th><th>OpenMPI</th></tr></thead>
+<tbody>
+<tr><td><code>i686-linux-gnu</code></td><td>&check;</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&check;</td></tr>
+<tr><td><code>x86_64-linux-gnu</code></td><td>&check;</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&check;</td></tr>
+<tr><td><code>aarch64-linux-gnu</code></td><td>&check;</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&check;</td></tr>
+<tr><td><code>armv6l-linux-gnueabihf</code></td><td>&check;</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&mdash;</td></tr>
+<tr><td><code>armv7l-linux-gnueabihf</code></td><td>&check;</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&check;</td></tr>
+<tr><td><code>powerpc64le-linux-gnu</code></td><td>&check;</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&check;</td></tr>
+<tr><td><code>riscv64-linux-gnu</code></td><td>&check;</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&check;</td></tr>
+<tr><td><code>i686-linux-musl</code></td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&mdash;</td><td>&check;</td></tr>
+<tr><td><code>x86_64-linux-musl</code></td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&mdash;</td><td>&check;</td></tr>
+<tr><td><code>aarch64-linux-musl</code></td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&mdash;</td><td>&check;</td></tr>
+<tr><td><code>armv6l-linux-musleabihf</code></td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&mdash;</td><td>&check;</td></tr>
+<tr><td><code>armv7l-linux-musleabihf</code></td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&mdash;</td><td>&check;</td></tr>
+<tr><td><code>x86_64-apple-darwin</code></td><td>&check;</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&check;</td></tr>
+<tr><td><code>aarch64-apple-darwin</code></td><td>&check;</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&check;</td></tr>
+<tr><td><code>x86_64-unknown-freebsd</code></td><td>&check;</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&check;</td></tr>
+<tr><td><code>aarch64-unknown-freebsd</code></td><td>&check;</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>&check;</td></tr>
+<tr><td><code>i686-w64-mingw32</code></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&check;</td><td>&mdash;</td></tr>
+<tr><td><code>x86_64-w64-mingw32</code></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&check;</td><td>&mdash;</td></tr>
+</tbody></table></div>
+
+
+<p>The implementations come from Yggdrasil&#39;s <a href="https://github.com/JuliaPackaging/Yggdrasil/blob/master/platforms/mpi.jl"><code>platforms/mpi.jl</code></a> each time the site is built.</p>
+<div class="page-foot">
+  <div class="copyright">
+    &copy; The Julia Project. Last modified: November 21, 2026. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+  </div>
+</div>
+</div><!-- CONTENT ENDS HERE -->
+    
+    
+    
+  </body>
+</html>

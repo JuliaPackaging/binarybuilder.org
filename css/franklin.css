@@ -239,3 +239,50 @@ return{c:[{cN:"metaj",b:/^julia>/,r:10,starts:{e:/^(?![ ]{6})/,sL:"julia"},alias
     color: white;
     border-radius: 0.3em;
 }
+
+.titlebar a {
+    color: inherit;
+    text-decoration: none;
+}
+.intro p a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+/* Section heading with a centered icon, e.g. Yggdrasil on the homepage */
+.section-head {
+    text-align: center;
+    margin: 1.5em 0 2em 0;
+}
+.section-head img {
+    display: block;
+    height: 6em;
+    margin: 0 auto 0.5em auto;
+}
+.franklin-content .section-head h2 {
+    text-align: center;
+    margin: 0 0 0.3em 0;
+}
+.section-head p {
+    margin: 0;
+}
+
+/* Generated toolchain tables (see utils.jl) */
+.table-scroll {
+    overflow-x: auto;
+    margin: 1em 0;
+}
+.franklin-content table.toolchains {
+    font-size: 90%;
+}
+.franklin-content table.toolchains th {
+    background-color: #f2f2f2;
+    padding: 6px 10px;
+}
+.franklin-content table.toolchains td {
+    text-align: left;
+    padding: 6px 10px;
+}
+.franklin-content table.toolchains td code {
+    white-space: nowrap;
+}

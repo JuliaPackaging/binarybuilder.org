@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Oswald|Quattrocento" rel="stylesheet">
+  
+
+  
+  
+  <link rel="stylesheet" href="/css/franklin.css">
+   <title>Yggdrasil GPUs</title>  
+  <style>
+
+  </style>
+</head>
+<body>
+
+  <header class="titlebar">
+      <h1><a href="/">BinaryBuilder</a></h1>
+  </header>
+  
+
+<!-- Content appended here -->
+<div class="franklin-content"><h1 id="gpus"><a href="#gpus" class="header-anchor">GPUs</a></h1>
+<p><a href="https://github.com/JuliaPackaging/Yggdrasil/">Yggdrasil</a>, the community build tree for BinaryBuilder recipes, builds packages for NVIDIA, AMD, Intel and Apple GPUs, and for the cross-vendor OpenCL, Vulkan and SPIR-V standards. Library versions on this page are the latest ones in Julia&#39;s General registry when the site was built.</p>
+<h2 id="nvidia"><a href="#nvidia" class="header-anchor">NVIDIA</a></h2>
+<p>Yggdrasil recipes that use CUDA are built for 20 of the 21 CUDA toolkits below by default. Each build is tagged with its CUDA version, and Julia installs the one that works with the user&#39;s CUDA runtime: a build for CUDA 12.2 works with any CUDA 12 runtime from 12.2 onwards. Program NVIDIA GPUs from Julia with <a href="https://github.com/JuliaGPU/CUDA.jl">CUDA.jl</a>, and start a recipe from the <a href="https://github.com/JuliaPackaging/Yggdrasil/tree/master/H/HelloWorldCUDA"><code>HelloWorldCUDA</code></a> example.</p>
+
+<div class="table-scroll"><table class="toolchains">
+<thead><tr><th>CUDA toolkit</th><th>x86_64</th><th>ARM servers (SBSA)</th><th>Jetson</th><th>Built by default</th></tr></thead>
+<tbody>
+<tr><td>10.2.89</td><td>&check;</td><td>&mdash;</td><td>&check;</td><td>Opt-in</td></tr>
+<tr><td>11.4.4</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>Yes</td></tr>
+<tr><td>11.5.2</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>Yes</td></tr>
+<tr><td>11.6.2</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>Yes</td></tr>
+<tr><td>11.7.1</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>Yes</td></tr>
+<tr><td>11.8.0</td><td>&check;</td><td>&check;</td><td>&check;</td><td>Yes</td></tr>
+<tr><td>12.0.1</td><td>&check;</td><td>&check;</td><td>&check;</td><td>Yes</td></tr>
+<tr><td>12.1.1</td><td>&check;</td><td>&check;</td><td>&check;</td><td>Yes</td></tr>
+<tr><td>12.2.2</td><td>&check;</td><td>&check;</td><td>&check;</td><td>Yes</td></tr>
+<tr><td>12.3.2</td><td>&check;</td><td>&check;</td><td>&mdash;</td><td>Yes</td></tr>
+<tr><td>12.4.1</td><td>&check;</td><td>&check;</td><td>&check;</td><td>Yes</td></tr>
+<tr><td>12.5.1</td><td>&check;</td><td>&check;</td><td>&check;</td><td>Yes</td></tr>
+<tr><td>12.6.3</td><td>&check;</td><td>&check;</td><td>&check;</td><td>Yes</td></tr>
+<tr><td>12.8.1</td><td>&check;</td><td>&check;</td><td>&check;</td><td>Yes</td></tr>
+<tr><td>12.9.1</td><td>&check;</td><td>&check;</td><td>&check;</td><td>Yes</td></tr>
+<tr><td>13.0.2</td><td>&check;</td><td>&check;</td><td>&check;</td><td>Yes</td></tr>
+<tr><td>13.1.1</td><td>&check;</td><td>&check;</td><td>&check;</td><td>Yes</td></tr>
+<tr><td>13.2.1</td><td>&check;</td><td>&check;</td><td>&check;</td><td>Yes</td></tr>
+<tr><td>13.3.1</td><td>&check;</td><td>&check;</td><td>&check;</td><td>Yes</td></tr>
+<tr><td>13.4.3</td><td>&check;</td><td>&check;</td><td>&check;</td><td>Yes</td></tr>
+<tr><td>13.5.0</td><td>&check;</td><td>&check;</td><td>&check;</td><td>Yes</td></tr>
+</tbody></table></div>
+
+
+<p>From CUDA 13, a single aarch64 build covers both ARM servers and Jetson. Toolkits marked opt-in or preview are left out of <code>CUDA.supported_platforms&#40;&#41;</code> by default; recipes include them with its <code>min_version</code> and <code>prereleases</code> keywords.</p>
+
+<div class="table-scroll"><table class="toolchains">
+<thead><tr><th>Package</th><th>Description</th><th>Latest version</th></tr></thead>
+<tbody>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/CUDNN_jll.jl"><code>CUDNN_jll</code></a></td><td>cuDNN: deep neural network primitives</td><td>9.28.0</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/CUTENSOR_jll.jl"><code>CUTENSOR_jll</code></a></td><td>cuTENSOR: tensor operations</td><td>2.8.1</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/CUDSS_jll.jl"><code>CUDSS_jll</code></a></td><td>cuDSS: sparse direct solvers</td><td>1.0.0</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/cuSolverMp_jll.jl"><code>cuSolverMp_jll</code></a></td><td>cuSOLVERMp: distributed dense linear algebra</td><td>0.8.0</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/cuQuantum_jll.jl"><code>cuQuantum_jll</code></a></td><td>cuQuantum: quantum circuit simulation</td><td>26.9.0</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/NCCL_jll.jl"><code>NCCL_jll</code></a></td><td>NCCL: communication between GPUs</td><td>2.32.3</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/TensorRT_jll.jl"><code>TensorRT_jll</code></a></td><td>TensorRT: deep learning inference</td><td>10.13.0</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/NVTX_jll.jl"><code>NVTX_jll</code></a></td><td>NVTX: annotations for profilers</td><td>3.2.2</td></tr>
+</tbody></table></div>
+
+
+<h2 id="amd"><a href="#amd" class="header-anchor">AMD</a></h2>
+<p>Program AMD GPUs from Julia with <a href="https://github.com/JuliaGPU/AMDGPU.jl">AMDGPU.jl</a>.</p>
+
+<div class="table-scroll"><table class="toolchains">
+<thead><tr><th>Package</th><th>Description</th><th>Latest version</th></tr></thead>
+<tbody>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/AMDGPU_LLVM_Backend_jll.jl"><code>AMDGPU_LLVM_Backend_jll</code></a></td><td>LLVM code generator for AMD GPUs</td><td>23.1.3</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/ROCmDeviceLibs_jll.jl"><code>ROCmDeviceLibs_jll</code></a></td><td>ROCm device libraries</td><td>7.0.2</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/hsa_rocr_jll.jl"><code>hsa_rocr_jll</code></a></td><td>ROCm runtime (HSA)</td><td>5.4.4</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/HIP_jll.jl"><code>HIP_jll</code></a></td><td>HIP runtime</td><td>5.4.4</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/rocBLAS_jll.jl"><code>rocBLAS_jll</code></a></td><td>rocBLAS: dense linear algebra</td><td>5.2.3</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/rocSPARSE_jll.jl"><code>rocSPARSE_jll</code></a></td><td>rocSPARSE: sparse linear algebra</td><td>5.2.3</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/rocRAND_jll.jl"><code>rocRAND_jll</code></a></td><td>rocRAND: random number generation</td><td>5.2.3</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/MIOpen_jll.jl"><code>MIOpen_jll</code></a></td><td>MIOpen: deep learning primitives</td><td>5.2.3</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/rocminfo_jll.jl"><code>rocminfo_jll</code></a></td><td>rocminfo: device information tool</td><td>5.4.4</td></tr>
+</tbody></table></div>
+
+
+<h2 id="intel"><a href="#intel" class="header-anchor">Intel</a></h2>
+<p>Program Intel GPUs from Julia with <a href="https://github.com/JuliaGPU/oneAPI.jl">oneAPI.jl</a>.</p>
+
+<div class="table-scroll"><table class="toolchains">
+<thead><tr><th>Package</th><th>Description</th><th>Latest version</th></tr></thead>
+<tbody>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/NEO_jll.jl"><code>NEO_jll</code></a></td><td>Compute runtime for Intel GPUs (NEO)</td><td>26.35.39758</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/libigc_jll.jl"><code>libigc_jll</code></a></td><td>Intel Graphics Compiler</td><td>2.41.5</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/gmmlib_jll.jl"><code>gmmlib_jll</code></a></td><td>Intel graphics memory management library</td><td>22.10.0</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/oneAPI_Level_Zero_Loader_jll.jl"><code>oneAPI_Level_Zero_Loader_jll</code></a></td><td>oneAPI Level Zero loader</td><td>1.32.0</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/oneAPI_Level_Zero_Headers_jll.jl"><code>oneAPI_Level_Zero_Headers_jll</code></a></td><td>oneAPI Level Zero headers</td><td>1.17.0</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/oneAPI_Support_jll.jl"><code>oneAPI_Support_jll</code></a></td><td>Support library for oneAPI.jl</td><td>0.11.0</td></tr>
+</tbody></table></div>
+
+
+<h2 id="apple"><a href="#apple" class="header-anchor">Apple</a></h2>
+<p>Program Apple GPUs from Julia with <a href="https://github.com/JuliaGPU/Metal.jl">Metal.jl</a>.</p>
+
+<div class="table-scroll"><table class="toolchains">
+<thead><tr><th>Package</th><th>Description</th><th>Latest version</th></tr></thead>
+<tbody>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/Metal_LLVM_Tools_jll.jl"><code>Metal_LLVM_Tools_jll</code></a></td><td>LLVM tools for generating Metal code</td><td>0.5.2</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/Metal_Shader_Converter_jll.jl"><code>Metal_Shader_Converter_jll</code></a></td><td>Metal shader converter</td><td>1.1.0</td></tr>
+</tbody></table></div>
+
+
+<h2 id="opencl_vulkan_and_spir-v"><a href="#opencl_vulkan_and_spir-v" class="header-anchor">OpenCL, Vulkan and SPIR-V</a></h2>
+<p>Use OpenCL from Julia with <a href="https://github.com/JuliaGPU/OpenCL.jl">OpenCL.jl</a> and Vulkan with <a href="https://github.com/JuliaGPU/Vulkan.jl">Vulkan.jl</a>.</p>
+
+<div class="table-scroll"><table class="toolchains">
+<thead><tr><th>Package</th><th>Description</th><th>Latest version</th></tr></thead>
+<tbody>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/OpenCL_jll.jl"><code>OpenCL_jll</code></a></td><td>OpenCL ICD loader</td><td>2024.10.24</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/OpenCL_Headers_jll.jl"><code>OpenCL_Headers_jll</code></a></td><td>OpenCL headers</td><td>2026.5.29</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/pocl_jll.jl"><code>pocl_jll</code></a></td><td>PoCL: portable OpenCL implementation for CPUs</td><td>7.2.2</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/intel_opencl_rt_jll.jl"><code>intel_opencl_rt_jll</code></a></td><td>Intel OpenCL runtime for x86_64 CPUs</td><td>2026.1.2</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/Vulkan_Loader_jll.jl"><code>Vulkan_Loader_jll</code></a></td><td>Vulkan loader</td><td>1.3.243</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/Vulkan_Headers_jll.jl"><code>Vulkan_Headers_jll</code></a></td><td>Vulkan headers</td><td>1.4.321</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/SPIRV_Tools_jll.jl"><code>SPIRV_Tools_jll</code></a></td><td>SPIR-V tools</td><td>2026.4.0</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/SPIRV_LLVM_Translator_jll.jl"><code>SPIRV_LLVM_Translator_jll</code></a></td><td>Translator between LLVM IR and SPIR-V</td><td>23.1.4</td></tr>
+<tr><td><a href="https://github.com/JuliaBinaryWrappers/SPIRV_LLVM_Backend_jll.jl"><code>SPIRV_LLVM_Backend_jll</code></a></td><td>LLVM code generator for SPIR-V</td><td>23.1.4</td></tr>
+</tbody></table></div>
+
+
+<p>The CUDA toolkits come from Yggdrasil&#39;s <a href="https://github.com/JuliaPackaging/Yggdrasil/blob/master/platforms/cuda.jl"><code>platforms/cuda.jl</code></a> each time the site is built.</p>
+<div class="page-foot">
+  <div class="copyright">
+    &copy; The Julia Project. Last modified: November 21, 2026. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+  </div>
+</div>
+</div><!-- CONTENT ENDS HERE -->
+    
+    
+    
+  </body>
+</html>
